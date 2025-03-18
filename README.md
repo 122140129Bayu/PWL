@@ -2,7 +2,7 @@
 
 Proyek ini adalah implementasi arsitektur **Microservices** menggunakan **Node.js**, **Express**, dan **PostgreSQL**. Setiap layanan memiliki fungsionalitas spesifik yang dijalankan di dalam Docker container.
 
-## 📋 Prasyarat
+## Prasyarat
 1. **Docker** dan **Docker Compose** harus terinstal di sistem Anda.
    - Cek instalasi:  
      ```bash
@@ -10,7 +10,7 @@ Proyek ini adalah implementasi arsitektur **Microservices** menggunakan **Node.j
      docker-compose --version
      ```
 
-## 🚀 Cara Menjalankan Proyek
+## Cara Menjalankan Proyek
 
 ### 1. Clone Repository
 ```bash
@@ -33,7 +33,7 @@ docker ps
 ```
 Pastikan semua service dan database berjalan dengan benar.
 
-## 🔎 Endpoint API
+## Endpoint API
 
 ### 1. API Gateway (Port: 3000)
 - `POST /api/auth/login` - Login pengguna
@@ -48,7 +48,7 @@ Mengakses PostgreSQL di dalam Docker:
 docker exec -it <CONTAINER_ID> psql -U user
 ```
 
-## 📊 Contoh Data di `init.sql`
+## Contoh Data di `init.sql`
 
 Database terpisah untuk setiap service:
 - **auth_db**: Informasi pengguna
@@ -56,7 +56,7 @@ Database terpisah untuk setiap service:
 - **post_db**: Data posting
 - **vote_db**: Data voting
 
-## 🛑 Menghentikan Semua Service
+## Menghentikan Semua Service
 ```bash
 docker-compose down
 ```
