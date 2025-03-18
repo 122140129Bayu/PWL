@@ -61,7 +61,7 @@ Database terpisah untuk setiap service:
 docker-compose down
 ```
 
-## 🛠️ Troubleshooting
+## Troubleshooting
 
 1. **Docker tidak dikenali**:
    - Pastikan Docker diinstal dan berjalan: `docker info`
