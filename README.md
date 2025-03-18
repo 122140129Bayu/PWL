@@ -14,7 +14,7 @@ Proyek ini adalah implementasi arsitektur **Microservices** menggunakan **Node.j
 
 ### 1. Clone Repository
 ```bash
-git clone <URL_REPO>
+gh repo clone 122140129Bayu/PWL
 cd microservices-app
 ```
 
