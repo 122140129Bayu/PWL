@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "3000:3000"
+    depends_on:
+      - auth-service
+      - user-service
+      - post-service
+      - vote-service
+
+  auth-service:
+    build: ./services/auth-service
+    environment:
+      DATABASE_URL: postgres://user:password@db:5432/auth_db
+    depends_on:
+      - db
+
+  user-service:
+    build: ./services/user-service
+    environment:
+      DATABASE_URL: postgres://user:password@db:5432/user_db
+    depends_on:
+      - db
+
+  post-service:
+    build: ./services/post-service
+    environment:
+      DATABASE_URL: postgres://user:password@db:5432/post_db
+    depends_on:
+      - db
+
+  vote-service:
+    build: ./services/vote-service
+    environment:
+      DATABASE_URL: postgres://user:password@db:5432/vote_db
+    depends_on:
+      - db
+
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
